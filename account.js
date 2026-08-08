@@ -1,3 +1,4 @@
+const accountStyle=document.createElement('style');accountStyle.textContent='.auth-tabs[hidden]{display:none!important}';document.head.append(accountStyle);
 const tabs=document.querySelectorAll('.auth-tabs button');
 tabs.forEach(tab=>tab.onclick=()=>{tabs.forEach(x=>x.classList.toggle('active',x===tab));document.querySelectorAll('.auth-panel').forEach(x=>x.hidden=x.id!==tab.dataset.tab);});
 async function request(form,url){const status=form.querySelector('.form-status');status.textContent='Подождите…';try{const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(form)))});const raw=await r.text();let d;try{d=JSON.parse(raw);}catch{throw new Error('Серверная часть не найдена.');}if(!r.ok)throw new Error(d.error||'Ошибка сервера.');return d;}catch(e){status.textContent=e.message||'Ошибка сервера.';return null;}}
