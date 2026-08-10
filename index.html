@@ -3,19 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#080b10" />
+    <meta name="theme-color" content="#081a33" />
     <meta name="description" content="Официальный форум Minecraft-сервера BOLTOVKA ANARCHY" />
     <title>BOLTOVKA ANARCHY — Minecraft форум</title>
+    <link rel="icon" type="image/png" href="assets/boltovka-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="theme.js"></script>
   </head>
   <body>
     <div class="noise"></div>
     <header class="header">
       <a class="brand" href="#home" aria-label="BOLTOVKA ANARCHY — главная">
-        <span class="brand-mark">B</span>
+        <img class="brand-logo" src="assets/boltovka-icon.png" alt="" />
         <span>BOLTOVKA<br /><em>ANARCHY</em></span>
       </a>
       <button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">☰</button>
@@ -28,6 +30,7 @@
         <a href="#apply">Набор</a>
         <a href="#forum">Форум</a>
       </nav>
+      <button class="theme-toggle" type="button" aria-label="Переключить тему" title="Светлая / тёмная тема">☼</button>
       <a class="account-button" href="account.html">Личный кабинет <span>↗</span></a>
     </header>
 
@@ -45,8 +48,7 @@
           <p class="server-ip">IP: <button data-copy="play.boltovka.ru">play.boltovka.ru</button><span class="online-dot offline" id="online-dot"></span><strong id="online-status">проверяем онлайн…</strong></p>
         </div>
         <div class="hero-art" aria-hidden="true">
-          <div class="sun"></div><div class="mountain mountain-a"></div><div class="mountain mountain-b"></div>
-          <img src="https://mc-heads.net/body/Boltov04ka/180" alt="" style="position:absolute;right:18%;bottom:8%;width:190px;height:360px;object-fit:contain;filter:drop-shadow(0 18px 26px #000)" />
+          <div class="hero-photo"></div>
           <div class="floating-card"><small>BOLTOVKA ANARCHY</small><b>ЗАХОДИ И<br />НАЧИНАЙ!</b></div>
         </div>
       </section>
@@ -95,7 +97,7 @@
       </section>
     </main>
 
-    <footer><a class="brand" href="#home"><span class="brand-mark">B</span><span>BOLTOVKA<br /><em>ANARCHY</em></span></a><p>© 2026 BOLTOVKA ANARCHY. Неофициальный проект, не связан с Mojang Studios.</p><a href="rules.html">Правила сервера</a></footer>
+    <footer><a class="brand" href="#home"><img class="brand-logo" src="assets/boltovka-icon.png" alt="" /><span>BOLTOVKA<br /><em>ANARCHY</em></span></a><p>© 2026 BOLTOVKA ANARCHY. Неофициальный проект, не связан с Mojang Studios.</p><a href="rules.html">Правила сервера</a><a class="discord-button" href="https://discord.gg/6uun2yMdR" target="_blank" rel="noreferrer" aria-label="Открыть Discord BOLTOVKA ANARCHY"><img src="assets/boltovka-icon.png" alt="" /><span>DISCORD</span></a></footer>
     <div class="toast" role="status" aria-live="polite"></div>
     <script src="script.js"></script>
   </body>

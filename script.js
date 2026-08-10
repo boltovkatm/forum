@@ -1,4 +1,6 @@
 const toast = document.querySelector('.toast');
+const clickSound=()=>{try{const c=new AudioContext(),o=c.createOscillator(),g=c.createGain();o.frequency.setValueAtTime(420,c.currentTime);o.frequency.exponentialRampToValueAtTime(720,c.currentTime+.08);g.gain.setValueAtTime(.035,c.currentTime);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+.1);o.connect(g).connect(c.destination);o.start();o.stop(c.currentTime+.11);}catch{}};
+document.addEventListener('click',e=>{if(e.target.closest('button,a'))clickSound();});
 const showToast = (message) => {
   toast.textContent = message;
   toast.classList.add('show');

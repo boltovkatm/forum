@@ -1,0 +1,1 @@
+const {send,setup,session}=require('./lib');module.exports=async(req,res)=>{if(req.method!=='GET')return send(res,405,{error:'Method not allowed'});try{await setup();const nickname=await session(req);if(!nickname)return send(res,401,{error:'Нет активной сессии.'});send(res,200,{ok:true,nickname});}catch{send(res,500,{error:'Не удалось проверить сессию.'});}};
